@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var btnAgregar: Button //Variable para buscar el botón de agregar.
 
     private val adaptador = Adaptador({
-        clickListener -> showItemClick(clickListener)
+        clickListener -> Delete(clickListener)
     })
 
 
@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity() {
         items.add("Prueba 2")
         items.add("Prueba 3")
 
+        //Agregando elemento a la lista.
         btnAgregar.setOnClickListener{
             items.add("Hola")
 
@@ -58,8 +59,20 @@ class MainActivity : AppCompatActivity() {
         lista.adapter = adaptador
     }
 
+    //Eliminando elementos de la lista.
+    fun Delete(position: Int){
+        var items: MutableList<String> = adaptador.getList()
+        items.removeAt(position)
+        adaptador.setItems(items)
+        lista.layoutManager=LinearLayoutManager(this)
+        lista.adapter=adaptador
+    }
+
+    /*
     fun showItemClick(position:Int){
         val item = adaptador.getItem(position)
         Toast.makeText(this, item, Toast.LENGTH_SHORT).show()
-    }
+       // adaptador.delete(position)
+        println(adaptador.getList())
+    }*/
 }
