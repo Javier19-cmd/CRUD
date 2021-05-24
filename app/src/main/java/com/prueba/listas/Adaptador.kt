@@ -36,7 +36,11 @@ class Adaptador(private val clickListener: (Int) -> Unit) : RecyclerView.Adapter
         fun bind(item: String, listener: (Int) -> Unit ) = with(itemView){
             txtTitulo.text = item
 
-            setOnClickListener { listener(adapterPosition) }
+            setOnClickListener { listener(adapterPosition)
+                //Modificando el texto del objeto presionado.
+                txtTitulo.text = "Cambio"
+            }
+
         }
     }
 }
