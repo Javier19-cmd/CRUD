@@ -1,3 +1,9 @@
+/*
+* Nombre: Javier Sebastián Valle Balsells
+* Carnet: 20159
+* Sección: 10
+* Taller de CRUD.
+* */
 package com.prueba.listas
 
 import android.view.LayoutInflater

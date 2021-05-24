@@ -4,11 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical">
 
+   <!--Poniendo botón para agregar texto-->
+   <Button
+       android:id="@+id/btnAgregar"
+       android:text="Agregar elemento"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"/>
+
+   <!--Lista para la compilación-->
    <androidx.recyclerview.widget.RecyclerView
        android:id="@+id/lista"
        android:layout_width="match_parent"
        android:layout_height="match_parent"/>
+
 
 </LinearLayout>
